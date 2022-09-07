@@ -10,19 +10,6 @@ export class Modal_Ctrl{
             $modal && new Draggable($modal);
         }//for
     }//init
-
-    /** target으로 부터 부모를 거슬러 올라가 찾아 .wrap-modal을 반환합니다. 
-     * @param target e.target
-     * @returns DOM .wrap-modal
-    */
-    get_wrap(target){
-        let $wrap = target.parentElement;
-        while(!$wrap.classList.contains('wrap-modal')){
-            if($wrap.tagName == "BODY") return null;
-            $wrap = $wrap.parentElement;
-        }
-        return $wrap;
-    }//get_wrap
 }//class-Modal_Ctrl
 
 /* ----------- 모달 드래그 ------------ */
