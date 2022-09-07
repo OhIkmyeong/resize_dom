@@ -2,6 +2,8 @@
 RESIZE DOM : DOM을 마우스다운+마우스무브 (드래그)로 Resize 가능하도록
 
 ## LINK
+* DEMO :
+    * https://ohikmyeong.github.io/resize_dom
 * jQuery UI : Ressizable
     * https://jqueryui.com/resizable/
 
