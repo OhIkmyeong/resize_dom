@@ -77,6 +77,4 @@ export class Resize{
         this.POS_START.x = nowX;
         this.POS_START.y = nowY;
     }//on_move
-
-    get_size(size,per){}//get_size
 }//Resize

@@ -83,6 +83,8 @@ class Draggable{
         this.LIMIT.bottom = WINDOW_SIZE.hei - (this.SIZE.hei / 2);
 
         window.addEventListener('mousemove', this.on_drag);
+        window.addEventListener('mouseup',this.stop_drag,{once:true});
+        window.addEventListener('mouseleave',this.stop_drag,{once:true});
     }//ready_to_drag
     
     /** 드래그 중(mousemove) 
@@ -115,9 +117,6 @@ class Draggable{
         this.$modal.style.transform = `translate(${x}px,${y}px)`; 
 
         clear_selection();
-
-        window.addEventListener('mouseup',this.stop_drag);
-        window.addEventListener('mouseleave',this.stop_drag);
     }//on_drag
 
     /** 드래그 끝(mouseup) */
@@ -126,6 +125,7 @@ class Draggable{
         this.POS.last.x = this.$modal.getBoundingClientRect().left;
         this.POS.last.y = this.$modal.getBoundingClientRect().top;
 
+        window.removeEventListener('mousemove', this.on_drag);
         this.$modal.addEventListener('mousedown', this.ready_to_drag, {once:true});
     }//stop_drag
 }//class-Draggable
